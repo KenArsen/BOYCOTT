@@ -9,7 +9,6 @@ services:
       - ../.env
     depends_on:
       - postgres_db
-      - redis-db
 
   postgres_db:
     image: postgres:16.3-alpine
@@ -19,6 +18,3 @@ services:
       POSTGRES_PASSWORD: boycott_password
     ports:
       - "5432:5432"
-
-  redis-db:
-    image: redis:7.0-alpine
