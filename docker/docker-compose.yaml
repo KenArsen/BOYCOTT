@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../.env
+    depends_on:
+      - postgres_db
+
+  postgres_db:
+    image: postgres:16.3-alpine
+    environment:
+      POSTGRES_USER: boycott_user
+      POSTGRES_DB: boycott_db
+      POSTGRES_PASSWORD: boycott_password
+    ports:
+      - "5432:5432"
