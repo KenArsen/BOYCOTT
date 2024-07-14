@@ -1,8 +1,12 @@
 from django.urls import include, path
 
-from .views.product import (ProductCreateAPIView, ProductDestroyAPIView,
-                            ProductListAPIView, ProductRetrieveAPIView,
-                            ProductUpdateAPIView)
+from .views.product import (
+    ProductCreateAPIView,
+    ProductDestroyAPIView,
+    ProductListAPIView,
+    ProductRetrieveAPIView,
+    ProductUpdateAPIView,
+)
 
 app_name = "product"
 

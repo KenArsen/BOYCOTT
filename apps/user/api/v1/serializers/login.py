@@ -25,3 +25,7 @@ class LoginSerializer(serializers.Serializer):
 
     def update(self, instance, validated_data):
         assert False, "Do not use update directly"  # noqa: S101
+
+
+class LogoutSerializer(serializers.Serializer):
+    pass

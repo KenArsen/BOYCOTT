@@ -1,27 +1,37 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema
-from rest_framework.generics import (CreateAPIView, DestroyAPIView,
-                                     ListAPIView, RetrieveAPIView,
-                                     UpdateAPIView)
+from rest_framework.filters import SearchFilter
+from rest_framework.generics import (
+    CreateAPIView,
+    DestroyAPIView,
+    ListAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+)
 
 from apps.product.api.filters import ProductFilter
 from apps.product.repositories.product import ProductRepository
-from apps.product.services.product import (CreateProductService,
-                                           DeleteProductService,
-                                           UpdateProductService)
+from apps.product.services.product import (
+    CreateProductService,
+    DeleteProductService,
+    UpdateProductService,
+)
 
-from ..serializers.product import (CreateProductSerializer,
-                                   ListProductSerializer,
-                                   RetrieveProductSerializer,
-                                   UpdateProductSerializer)
+from ..serializers.product import (
+    CreateProductSerializer,
+    ListProductSerializer,
+    RetrieveProductSerializer,
+    UpdateProductSerializer,
+)
 
 
 @extend_schema(tags=["Products"], summary="List product")
 class ProductListAPIView(ListAPIView):
     queryset = ProductRepository().none()
     serializer_class = ListProductSerializer
-    filter_backends = (DjangoFilterBackend,)
+    filter_backends = (DjangoFilterBackend, SearchFilter)
     filterset_class = ProductFilter
+    search_fields = ("brand",)
 
     def get_queryset(self):
         return ProductRepository().list()

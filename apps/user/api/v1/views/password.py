@@ -5,8 +5,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from apps.user.api.v1.serializers.password import (
-    ChangePasswordSerializer, ConfirmResetPasswordSerializer,
-    ResetPasswordSerializer)
+    ChangePasswordSerializer,
+    ConfirmResetPasswordSerializer,
+    ResetPasswordSerializer,
+)
 
 
 class ChangePasswordAPIView(CreateAPIView):

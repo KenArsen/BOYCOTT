@@ -32,6 +32,10 @@ class RetrieveProductSerializer(serializers.ModelSerializer):
 
 
 class CreateProductSerializer(serializers.ModelSerializer):
+    description_en = serializers.CharField(required=False, allow_blank=True)
+    description_ru = serializers.CharField(required=False, allow_blank=True)
+    description_kg = serializers.CharField(required=False, allow_blank=True)
+
     class Meta:
         model = Product
         fields = (
@@ -39,6 +43,9 @@ class CreateProductSerializer(serializers.ModelSerializer):
             "logo",
             "status",
             "description",
+            "description_en",
+            "description_ru",
+            "description_kg",
         )
         ref_name = "CreateProduct"
 

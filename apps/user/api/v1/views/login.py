@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.user.api.permissions import IsNotAuthenticated
-from apps.user.api.v1.serializers.login import LoginSerializer
+from apps.user.api.v1.serializers.login import LoginSerializer, LogoutSerializer
 from apps.user.services.login import LoginService
 
 
@@ -29,6 +29,7 @@ class LoginView(GenericAPIView):
 
 class LogoutView(GenericAPIView):
     permission_classes = [IsAuthenticated]
+    serializer_class = LogoutSerializer
 
     @extend_schema(
         summary="Log out",

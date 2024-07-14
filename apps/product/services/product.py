@@ -1,7 +1,6 @@
 from ..models import Product
 from ..repositories.product import ProductRepository
-from .base import (ICreateProductService, IDeleteProductService,
-                   IUpdateProductService)
+from .base import ICreateProductService, IDeleteProductService, IUpdateProductService
 
 
 class CreateProductService(ICreateProductService):
@@ -9,7 +8,12 @@ class CreateProductService(ICreateProductService):
         self._product_repository = product_repository
 
     def create_product(self, data) -> Product:
-        return self._product_repository.create(data)
+        product = self._product_repository.create(data)
+        product.description_en = data.get('description_en', '')
+        product.description_ru = data.get('description_ru', '')
+        product.description_kg = data.get('description_kg', '')
+        product.save()
+        return product
 
 
 class UpdateProductService(IUpdateProductService):

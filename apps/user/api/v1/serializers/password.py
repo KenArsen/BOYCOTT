@@ -1,9 +1,11 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
-from apps.user.exceptions import (InvalidPasswordError,
-                                  InvalidResetPasswordSignatureError,
-                                  WrongPasswordError)
+from apps.user.exceptions import (
+    InvalidPasswordError,
+    InvalidResetPasswordSignatureError,
+    WrongPasswordError,
+)
 from apps.user.services.password import PasswordService
 
 

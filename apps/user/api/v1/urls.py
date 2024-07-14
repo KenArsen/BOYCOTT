@@ -1,11 +1,16 @@
 from django.urls import path
-from rest_framework_simplejwt.views import (TokenObtainPairView,
-                                            TokenRefreshView, TokenVerifyView)
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 from apps.user.api.v1.views.login import LoginView, LogoutView
-from apps.user.api.v1.views.password import (ChangePasswordAPIView,
-                                             ConfirmResetPasswordAPIView,
-                                             ResetPasswordAPIView)
+from apps.user.api.v1.views.password import (
+    ChangePasswordAPIView,
+    ConfirmResetPasswordAPIView,
+    ResetPasswordAPIView,
+)
 from apps.user.api.v1.views.profile import UserProfileAPIView
 from apps.user.api.v1.views.registration import RegistrationAPIView
 
