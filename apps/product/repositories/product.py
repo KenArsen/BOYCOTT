@@ -9,6 +9,9 @@ class ProductRepository(IProductRepository):
     def none(self) -> QuerySet[Product]:
         return Product.objects.none()
 
+    def count(self) -> int:
+        return Product.objects.count()
+
     def list(self) -> list[Product]:
         return Product.objects.all()
 

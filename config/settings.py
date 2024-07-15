@@ -122,7 +122,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication"
     ],
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "PAGE_SIZE": 20,
 }
@@ -179,25 +179,6 @@ JAZZMIN_SETTINGS = {
     "language_chooser": True,
 }
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': env.str("BOYCOTT_REDIS_URL"),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
-
-# Настройки кэширования сессий
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-SESSION_CACHE_ALIAS = 'default'
-
-# Настройки кэширования кеш-фреймворка
-CACHE_MIDDLEWARE_ALIAS = 'default'
-CACHE_MIDDLEWARE_SECONDS = 600  # Время кэширования в секундах
-CACHE_MIDDLEWARE_KEY_PREFIX = ''
-
 # Internationalization settings
 LANGUAGE_CODE = "ru-ru"
 LANGUAGES = [
@@ -227,7 +208,6 @@ USE_TZ = True
 # Static files settings
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 
 # Media files settings
 MEDIA_URL = "/media/"

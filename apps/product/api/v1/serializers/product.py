@@ -60,3 +60,11 @@ class UpdateProductSerializer(serializers.ModelSerializer):
             "description",
         )
         ref_name = "UpdateProduct"
+
+
+class CountProductSerializer(serializers.ModelSerializer):
+    count = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = Product
+        fields = ("count",)

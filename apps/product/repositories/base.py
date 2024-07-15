@@ -10,6 +10,9 @@ class IProductRepository(abc.ABC):
     def none(self) -> QuerySet[Product]: ...
 
     @abc.abstractmethod
+    def count(self) -> int: ...
+
+    @abc.abstractmethod
     def list(self) -> list[Product]: ...
 
     @abc.abstractmethod

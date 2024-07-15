@@ -6,12 +6,14 @@ from .views.product import (
     ProductListAPIView,
     ProductRetrieveAPIView,
     ProductUpdateAPIView,
+    ProductCountAPIView,
 )
 
 app_name = "product"
 
 product_urls = [
     path("", ProductListAPIView.as_view(), name="list-product"),
+    path("count/", ProductCountAPIView.as_view(), name="count-product"),
     path("create/", ProductCreateAPIView.as_view(), name="create-product"),
     path("<uuid:pk>/", ProductRetrieveAPIView.as_view(), name="retrieve-product"),
     path("<uuid:pk>/update/", ProductUpdateAPIView.as_view(), name="update-product"),
