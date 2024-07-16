@@ -84,23 +84,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env.str("BOYCOTT_DATABASE_NAME"),
-        "USER": env.str("BOYCOTT_DATABASE_USER"),
-        "PASSWORD": env.str("BOYCOTT_DATABASE_PASSWORD"),
-        "HOST": env.str("BOYCOTT_DATABASE_HOST"),
-        "PORT": env.int("BOYCOTT_DATABASE_PORT"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": env.str("BOYCOTT_DATABASE_NAME"),
+#         "USER": env.str("BOYCOTT_DATABASE_USER"),
+#         "PASSWORD": env.str("BOYCOTT_DATABASE_PASSWORD"),
+#         "HOST": env.str("BOYCOTT_DATABASE_HOST"),
+#         "PORT": env.int("BOYCOTT_DATABASE_PORT"),
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -232,6 +232,7 @@ X_FRAME_OPTIONS = env.str("BOYCOTT_X_FRAME_OPTIONS", default="SAMEORIGIN")
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_SSL_REDIRECT = True
 # SECURE_HSTS_PRELOAD = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = env.list("BOYCOTT_CORS_ALLOWED_ORIGINS", default=[])
 CSRF_TRUSTED_ORIGINS = env.list("BOYCOTT_CSRF_TRUSTED_ORIGINS", default=[])
 CORS_ORIGIN_ALLOW_ALL = True
