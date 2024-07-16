@@ -84,23 +84,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
 # DATABASES = {
 #     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": env.str("BOYCOTT_DATABASE_NAME"),
-#         "USER": env.str("BOYCOTT_DATABASE_USER"),
-#         "PASSWORD": env.str("BOYCOTT_DATABASE_PASSWORD"),
-#         "HOST": env.str("BOYCOTT_DATABASE_HOST"),
-#         "PORT": env.int("BOYCOTT_DATABASE_PORT"),
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env.str("BOYCOTT_DATABASE_NAME"),
+        "USER": env.str("BOYCOTT_DATABASE_USER"),
+        "PASSWORD": env.str("BOYCOTT_DATABASE_PASSWORD"),
+        "HOST": env.str("BOYCOTT_DATABASE_HOST"),
+        "PORT": env.int("BOYCOTT_DATABASE_PORT"),
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
