@@ -124,7 +124,7 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    "PAGE_SIZE": 20,
+    # "PAGE_SIZE": 20,
 }
 
 SIMPLE_JWT = {
@@ -165,6 +165,7 @@ JAZZMIN_SETTINGS = {
         "user.Group": "fas fa-users",
         "sites.Site": "fas fa-globe",
         "product.Product": "fas fa-box",
+        "product.Category": "fas fa-tags",
     },
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",

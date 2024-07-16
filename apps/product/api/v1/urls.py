@@ -1,5 +1,13 @@
 from django.urls import include, path
 
+from .views.category import (
+    CategoryListAPIView,
+    CategoryRetrieveAPIView,
+    CategoryCreateAPIView,
+    CategoryUpdateAPIView,
+    CategoryDestroyAPIView,
+)
+
 from .views.product import (
     ProductCreateAPIView,
     ProductDestroyAPIView,
@@ -10,6 +18,15 @@ from .views.product import (
 )
 
 app_name = "product"
+
+category_urls = [
+    path("", CategoryListAPIView.as_view(), name="category-list"),
+    path("create/", CategoryCreateAPIView.as_view(), name="category-create"),
+    path("<uuid:pk>/", CategoryRetrieveAPIView.as_view(), name="category-retrieve"),
+    path("<uuid:pk>/update/", CategoryUpdateAPIView.as_view(), name="category-update"),
+    path("<uuid:pk>/delete/", CategoryDestroyAPIView.as_view(), name="category-destroy"),
+
+]
 
 product_urls = [
     path("", ProductListAPIView.as_view(), name="list-product"),
@@ -22,4 +39,5 @@ product_urls = [
 
 urlpatterns = [
     path("", include(product_urls)),
+    path("categories/", include(category_urls)),
 ]

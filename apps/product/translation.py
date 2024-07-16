@@ -1,6 +1,11 @@
 from modeltranslation.translator import TranslationOptions, register
 
-from .models import Product
+from .models import Product, Category
+
+
+@register(Category)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name',)
 
 
 @register(Product)

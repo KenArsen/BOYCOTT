@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 08:55+0600\n"
+"POT-Creation-Date: 2024-07-16 11:20+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,35 +26,51 @@ msgstr ""
 msgid "updated at"
 msgstr ""
 
-#: apps/product/admin.py:15 apps/product/models/product.py:35
-msgid "Product"
+#: apps/product/admin.py:15 apps/product/models/product.py:17
+msgid "Category"
 msgstr ""
 
-#: apps/product/admin.py:16
+#: apps/product/admin.py:16 apps/product/admin.py:38
 msgid "Timestamps"
 msgstr ""
 
-#: apps/product/models/product.py:9
+#: apps/product/admin.py:37 apps/product/models/product.py:55
+msgid "Product"
+msgstr ""
+
+#: apps/product/models/product.py:10
+msgid "name"
+msgstr ""
+
+#: apps/product/models/product.py:18
+msgid "Categories"
+msgstr ""
+
+#: apps/product/models/product.py:25
+msgid "category"
+msgstr ""
+
+#: apps/product/models/product.py:29
 msgid "brand"
 msgstr ""
 
-#: apps/product/models/product.py:13
+#: apps/product/models/product.py:33
 msgid "logo"
 msgstr ""
 
-#: apps/product/models/product.py:19
+#: apps/product/models/product.py:39
 msgid "status"
 msgstr ""
 
-#: apps/product/models/product.py:22
+#: apps/product/models/product.py:42
 msgid "Designates whether this product is in boycott (True) or normal (False)."
 msgstr ""
 
-#: apps/product/models/product.py:26
+#: apps/product/models/product.py:46
 msgid "description"
 msgstr ""
 
-#: apps/product/models/product.py:36
+#: apps/product/models/product.py:56
 msgid "Products"
 msgstr ""
 
@@ -78,45 +94,45 @@ msgstr ""
 msgid "Could not create account with this email."
 msgstr ""
 
-#: apps/user/models/user.py:35
+#: apps/user/models/user.py:36
 msgid "email address"
 msgstr ""
 
-#: apps/user/models/user.py:37
+#: apps/user/models/user.py:40
 msgid "first name"
 msgstr ""
 
-#: apps/user/models/user.py:40
+#: apps/user/models/user.py:45
 msgid "last name"
 msgstr ""
 
-#: apps/user/models/user.py:43
+#: apps/user/models/user.py:50
 msgid "staff status"
 msgstr ""
 
-#: apps/user/models/user.py:46
+#: apps/user/models/user.py:53
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: apps/user/models/user.py:50
+#: apps/user/models/user.py:57
 msgid "active"
 msgstr ""
 
-#: apps/user/models/user.py:53
+#: apps/user/models/user.py:60
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: apps/user/models/user.py:57
+#: apps/user/models/user.py:64
 msgid "date joined"
 msgstr ""
 
-#: apps/user/models/user.py:67
+#: apps/user/models/user.py:75
 msgid "User"
 msgstr ""
 
-#: apps/user/models/user.py:68
+#: apps/user/models/user.py:76
 msgid "Users"
 msgstr ""
 
@@ -128,14 +144,14 @@ msgstr ""
 msgid "Invalid confirmation code or user does not exist"
 msgstr ""
 
-#: config/settings.py:194
+#: config/settings.py:185
 msgid "English"
 msgstr ""
 
-#: config/settings.py:195
+#: config/settings.py:186
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:196
+#: config/settings.py:187
 msgid "Kyrgyz"
 msgstr ""

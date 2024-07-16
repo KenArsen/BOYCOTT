@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 19:39+0600\n"
+"POT-Creation-Date: 2024-07-16 11:20+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,35 +25,53 @@ msgstr "түзүлгөн күнү"
 msgid "updated at"
 msgstr "жаңыртылган күнү"
 
-#: apps/product/admin.py:15 apps/product/models/product.py:35
-msgid "Product"
-msgstr "Продукт"
+#: apps/product/admin.py:15 apps/product/models/product.py:17
+msgid "Category"
+msgstr "Категория"
 
-#: apps/product/admin.py:16
+#: apps/product/admin.py:16 apps/product/admin.py:38
 msgid "Timestamps"
 msgstr "Мөөнөт белгилери"
 
-#: apps/product/models/product.py:9
+#: apps/product/admin.py:37 apps/product/models/product.py:55
+msgid "Product"
+msgstr "Продукт"
+
+#: apps/product/models/product.py:10
+#, fuzzy
+#| msgid "last name"
+msgid "name"
+msgstr "аты"
+
+#: apps/product/models/product.py:18
+msgid "Categories"
+msgstr "Категориялар"
+
+#: apps/product/models/product.py:25
+msgid "category"
+msgstr "категория"
+
+#: apps/product/models/product.py:29
 msgid "brand"
 msgstr "бренд"
 
-#: apps/product/models/product.py:13
+#: apps/product/models/product.py:33
 msgid "logo"
 msgstr "логотип"
 
-#: apps/product/models/product.py:19
+#: apps/product/models/product.py:39
 msgid "status"
 msgstr "статус"
 
-#: apps/product/models/product.py:22
+#: apps/product/models/product.py:42
 msgid "Designates whether this product is in boycott (True) or normal (False)."
 msgstr "Бул продукт бойкотто (True) же нормалдуу (False) экенин аныктайт."
 
-#: apps/product/models/product.py:26
+#: apps/product/models/product.py:46
 msgid "description"
 msgstr "сүрөттөмө"
 
-#: apps/product/models/product.py:36
+#: apps/product/models/product.py:56
 msgid "Products"
 msgstr "Продукттар"
 
@@ -129,14 +147,14 @@ msgstr "Туура эмес сырсөз."
 msgid "Invalid confirmation code or user does not exist"
 msgstr "Туура эмес ырастоо коду же колдонуучу жок"
 
-#: config/settings.py:184
+#: config/settings.py:185
 msgid "English"
 msgstr "Англисче"
 
-#: config/settings.py:185
+#: config/settings.py:186
 msgid "Russian"
 msgstr "Орусча"
 
-#: config/settings.py:186
+#: config/settings.py:187
 msgid "Kyrgyz"
 msgstr "Кыргызча"
