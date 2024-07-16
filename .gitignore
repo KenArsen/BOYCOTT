@@ -1,4 +1,5 @@
 .boycott/
+staticfiles/
 
 # Django #
 *.log

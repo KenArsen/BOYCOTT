@@ -207,7 +207,7 @@ USE_TZ = True
 
 # Static files settings
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files settings
 MEDIA_URL = "/media/"
