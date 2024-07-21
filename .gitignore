@@ -8,7 +8,8 @@ staticfiles/
 __pycache__
 db.sqlite3
 media
-
+docker/
+.dockerignore
 # Backup files #
 *.bak
 
