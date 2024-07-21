@@ -48,6 +48,12 @@ class Product(CoreModel):
         null=True,
     )
 
+    url = models.URLField(
+        verbose_name=gettext_lazy("url"),
+        blank=True,
+        null=True,
+    )
+
     def __str__(self):
         return self.brand
 

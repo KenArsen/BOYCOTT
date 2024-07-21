@@ -34,7 +34,7 @@ class ProductAdmin(TranslationAdmin):
     search_fields = ("brand", "category", "description")
     readonly_fields = ("created_at", "updated_at")
     fieldsets = (
-        (_("Product"), {"fields": ("category","brand", "logo", "status", "description")}),
+        (_("Product"), {"fields": ("category","brand", "logo", "status", "description", "url")}),
         (_("Timestamps"), {"fields": ("created_at", "updated_at")}),
     )
 
