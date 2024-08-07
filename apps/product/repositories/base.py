@@ -2,7 +2,7 @@ import abc
 
 from django.db.models.query import QuerySet
 
-from apps.product.models import Product, Category
+from apps.product.models import Category, Product
 
 
 class ICategoryRepository(abc.ABC):

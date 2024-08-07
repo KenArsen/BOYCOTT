@@ -16,11 +16,11 @@ class ProductRepository(IProductRepository):
         return Product.objects.filter(category=category, status=False)
 
     def list(self) -> list[Product]:
-        return Product.objects.all().select_related('category').order_by('-created_at')
+        return Product.objects.all().select_related("category").order_by("-created_at")
 
     def retrieve(self, product_id: int) -> Product:
         try:
-            return Product.objects.select_related('category').get(pk=product_id)
+            return Product.objects.select_related("category").get(pk=product_id)
         except Product.DoesNotExist:
             raise NotFound("Product not found")
 

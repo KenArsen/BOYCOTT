@@ -1,7 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema
-from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import (
     CreateAPIView,
@@ -10,6 +8,8 @@ from rest_framework.generics import (
     RetrieveAPIView,
     UpdateAPIView,
 )
+from rest_framework.response import Response
+from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
 
 from apps.product.api.filters import ProductFilter
@@ -21,11 +21,11 @@ from apps.product.services.product import (
 )
 
 from ..serializers.product import (
+    CountProductSerializer,
     CreateProductSerializer,
     ListProductSerializer,
     RetrieveProductSerializer,
     UpdateProductSerializer,
-    CountProductSerializer,
 )
 
 

@@ -1,6 +1,4 @@
 from drf_spectacular.utils import extend_schema
-from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import (
     CreateAPIView,
@@ -9,6 +7,8 @@ from rest_framework.generics import (
     RetrieveAPIView,
     UpdateAPIView,
 )
+from rest_framework.response import Response
+from rest_framework.status import HTTP_200_OK
 
 from apps.product.repositories.category import CategoryRepository
 from apps.product.services.category import (

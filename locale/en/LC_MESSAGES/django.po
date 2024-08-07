@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-16 11:20+0600\n"
+"POT-Creation-Date: 2024-08-07 09:28+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,12 +30,16 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: apps/product/admin.py:16 apps/product/admin.py:38
+#: apps/product/admin.py:16 apps/product/admin.py:41
 msgid "Timestamps"
 msgstr ""
 
-#: apps/product/admin.py:37 apps/product/models/product.py:55
+#: apps/product/admin.py:39 apps/product/models/product.py:67
 msgid "Product"
+msgstr ""
+
+#: apps/product/admin.py:40
+msgid "Alternatives"
 msgstr ""
 
 #: apps/product/models/product.py:10
@@ -70,7 +74,15 @@ msgstr ""
 msgid "description"
 msgstr ""
 
-#: apps/product/models/product.py:56
+#: apps/product/models/product.py:52
+msgid "url"
+msgstr ""
+
+#: apps/product/models/product.py:59
+msgid "alternatives"
+msgstr ""
+
+#: apps/product/models/product.py:68
 msgid "Products"
 msgstr ""
 
@@ -144,14 +156,14 @@ msgstr ""
 msgid "Invalid confirmation code or user does not exist"
 msgstr ""
 
-#: config/settings.py:185
+#: config/settings.py:186
 msgid "English"
 msgstr ""
 
-#: config/settings.py:186
+#: config/settings.py:187
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:187
+#: config/settings.py:188
 msgid "Kyrgyz"
 msgstr ""

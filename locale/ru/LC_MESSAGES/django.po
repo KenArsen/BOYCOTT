@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-16 11:20+0600\n"
+"POT-Creation-Date: 2024-08-07 09:28+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,13 +32,19 @@ msgstr "обновлено"
 msgid "Category"
 msgstr "Категория"
 
-#: apps/product/admin.py:16 apps/product/admin.py:38
+#: apps/product/admin.py:16 apps/product/admin.py:41
 msgid "Timestamps"
 msgstr "Временные метки"
 
-#: apps/product/admin.py:37 apps/product/models/product.py:55
+#: apps/product/admin.py:39 apps/product/models/product.py:67
 msgid "Product"
 msgstr "Продукт"
+
+#: apps/product/admin.py:40
+#, fuzzy
+#| msgid "alternatives"
+msgid "Alternatives"
+msgstr "альтернативы"
 
 #: apps/product/models/product.py:10
 #, fuzzy
@@ -75,7 +81,15 @@ msgstr ""
 msgid "description"
 msgstr "описание"
 
-#: apps/product/models/product.py:56
+#: apps/product/models/product.py:52
+msgid "url"
+msgstr ""
+
+#: apps/product/models/product.py:59
+msgid "alternatives"
+msgstr "альтернативы"
+
+#: apps/product/models/product.py:68
 msgid "Products"
 msgstr "Продукты"
 
@@ -151,14 +165,14 @@ msgstr "Неправильный пароль."
 msgid "Invalid confirmation code or user does not exist"
 msgstr "Недействительный код подтверждения или пользователь не существует"
 
-#: config/settings.py:185
+#: config/settings.py:186
 msgid "English"
 msgstr "Английский"
 
-#: config/settings.py:186
+#: config/settings.py:187
 msgid "Russian"
 msgstr "Русский"
 
-#: config/settings.py:187
+#: config/settings.py:188
 msgid "Kyrgyz"
 msgstr "Кыргызский"

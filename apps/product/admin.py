@@ -2,13 +2,13 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TranslationAdmin
 
-from .models import Product, Category
+from .models import Category, Product
 
 
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
+    list_display = ("name",)
+    search_fields = ("name",)
     list_filter = ("created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     fieldsets = (
@@ -31,10 +31,16 @@ class CategoryAdmin(TranslationAdmin):
 class ProductAdmin(TranslationAdmin):
     list_display = ("brand", "status", "category", "created_at", "updated_at")
     list_filter = ("status", "category", "created_at", "updated_at")
-    search_fields = ("brand", "category", "description")
+    search_fields = ("brand", "category__name", "description")
     readonly_fields = ("created_at", "updated_at")
+    filter_horizontal = ("alternatives",)
+
     fieldsets = (
-        (_("Product"), {"fields": ("category","brand", "logo", "status", "description", "url")}),
+        (
+            _("Product"),
+            {"fields": ("category", "brand", "logo", "status", "description", "url")},
+        ),
+        (_("Alternatives"), {"fields": ("alternatives",)}),
         (_("Timestamps"), {"fields": ("created_at", "updated_at")}),
     )
 

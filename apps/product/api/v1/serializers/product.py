@@ -1,10 +1,9 @@
 from rest_framework import serializers
 
 from apps.product.models import Product
-from apps.product.repositories.product import ProductRepository
 
 
-class AlternativeProductListSerializer(serializers.ModelSerializer):
+class AlternativeProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ("uuid", "brand", "logo")
@@ -27,7 +26,7 @@ class ListProductSerializer(serializers.ModelSerializer):
 
 
 class RetrieveProductSerializer(serializers.ModelSerializer):
-    alternative_products = serializers.SerializerMethodField()
+    alternatives = AlternativeProductSerializer(many=True, read_only=True)
 
     class Meta:
         model = Product
@@ -39,15 +38,9 @@ class RetrieveProductSerializer(serializers.ModelSerializer):
             "category",
             "description",
             "url",
-            "alternative_products",
+            "alternatives",
         )
         ref_name = "RetrieveProduct"
-
-    def get_alternative_products(self, obj):
-        product_repository = ProductRepository()
-        alternative_products = product_repository.get_alternative(category=obj.category)
-
-        return AlternativeProductListSerializer(alternative_products, many=True).data
 
 
 class CreateProductSerializer(serializers.ModelSerializer):

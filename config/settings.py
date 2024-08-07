@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
 
+from django.conf.locale import LANG_INFO
 from django.utils.translation import gettext_lazy as _
 from environs import Env
-from django.conf.locale import LANG_INFO
 
 env = Env()
 env_file = os.getenv("ENV_FILE", ".env")
@@ -191,14 +191,16 @@ LANGUAGES = [
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en"
 MODELTRANSLATION_LANGUAGES = ("en", "ru", "kg")
 
-LANG_INFO.update({
-    'kg': {
-        'bidi': False,
-        'code': 'kg',
-        'name': 'Kyrgyz',
-        'name_local': 'Кыргызча',
-    },
-})
+LANG_INFO.update(
+    {
+        "kg": {
+            "bidi": False,
+            "code": "kg",
+            "name": "Kyrgyz",
+            "name_local": "Кыргызча",
+        },
+    }
+)
 
 TIME_ZONE = env.str("BOYCOTT_TIME_ZONE", default="UTC")
 
@@ -220,7 +222,9 @@ LOCALE_PATHS = [BASE_DIR / "locale/"]
 # Security settings
 USE_X_FORWARDED_HOST = True
 APPEND_SLASH = False
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool("BOYCOTT_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
+SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
+    "BOYCOTT_SECURE_CONTENT_TYPE_NOSNIFF", default=True
+)
 SECURE_HSTS_SECONDS = env.int("BOYCOTT_SECURE_HSTS_SECONDS", default=31536000)  # 1 year
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SESSION_COOKIE_HTTPONLY = env.bool("BOYCOTT_SESSION_COOKIE_HTTPONLY", default=True)

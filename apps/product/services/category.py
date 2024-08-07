@@ -9,9 +9,9 @@ class CreateCategoryService(ICreateCategoryService):
 
     def create_category(self, data) -> Category:
         category = self._category_repository.create(data)
-        Category.description_en = data.get('name_en', '')
-        Category.description_ru = data.get('name_ru', '')
-        Category.description_kg = data.get('name_kg', '')
+        Category.description_en = data.get("name_en", "")
+        Category.description_ru = data.get("name_ru", "")
+        Category.description_kg = data.get("name_kg", "")
         category.save()
         return category
 

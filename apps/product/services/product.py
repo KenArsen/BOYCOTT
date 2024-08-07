@@ -9,9 +9,9 @@ class CreateProductService(ICreateProductService):
 
     def create_product(self, data) -> Product:
         product = self._product_repository.create(data)
-        product.description_en = data.get('description_en', '')
-        product.description_ru = data.get('description_ru', '')
-        product.description_kg = data.get('description_kg', '')
+        product.description_en = data.get("description_en", "")
+        product.description_ru = data.get("description_ru", "")
+        product.description_kg = data.get("description_kg", "")
         product.save()
         return product
 

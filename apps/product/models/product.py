@@ -7,23 +7,23 @@ from apps.common.models import CoreModel
 class Category(CoreModel):
     name = models.CharField(
         max_length=255,
-        verbose_name=gettext_lazy('name'),
+        verbose_name=gettext_lazy("name"),
     )
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = gettext_lazy('Category')
-        verbose_name_plural = gettext_lazy('Categories')
+        verbose_name = gettext_lazy("Category")
+        verbose_name_plural = gettext_lazy("Categories")
 
 
 class Product(CoreModel):
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,
-        verbose_name=gettext_lazy('category'),
-        related_name='products',
+        verbose_name=gettext_lazy("category"),
+        related_name="products",
     )
     brand = models.CharField(
         verbose_name=gettext_lazy("brand"),
@@ -52,6 +52,12 @@ class Product(CoreModel):
         verbose_name=gettext_lazy("url"),
         blank=True,
         null=True,
+    )
+
+    alternatives = models.ManyToManyField(
+        "self",
+        verbose_name=gettext_lazy("alternatives"),
+        blank=True,
     )
 
     def __str__(self):

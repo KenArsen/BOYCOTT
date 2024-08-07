@@ -10,11 +10,13 @@ class CategoryRepository(ICategoryRepository):
         return Category.objects.none()
 
     def list(self) -> list[Category]:
-        return Category.objects.all().prefetch_related('products').order_by('-created_at')
+        return (
+            Category.objects.all().prefetch_related("products").order_by("-created_at")
+        )
 
     def retrieve(self, category_id: int) -> Category:
         try:
-            return Category.objects.prefetch_related('products').get(pk=category_id)
+            return Category.objects.prefetch_related("products").get(pk=category_id)
         except Category.DoesNotExist:
             raise NotFound("Category not found")
 

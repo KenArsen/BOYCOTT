@@ -1,20 +1,19 @@
 from django.urls import include, path
 
 from .views.category import (
+    CategoryCreateAPIView,
+    CategoryDestroyAPIView,
     CategoryListAPIView,
     CategoryRetrieveAPIView,
-    CategoryCreateAPIView,
     CategoryUpdateAPIView,
-    CategoryDestroyAPIView,
 )
-
 from .views.product import (
+    ProductCountAPIView,
     ProductCreateAPIView,
     ProductDestroyAPIView,
     ProductListAPIView,
     ProductRetrieveAPIView,
     ProductUpdateAPIView,
-    ProductCountAPIView,
 )
 
 app_name = "product"
@@ -24,8 +23,9 @@ category_urls = [
     path("create/", CategoryCreateAPIView.as_view(), name="category-create"),
     path("<uuid:pk>/", CategoryRetrieveAPIView.as_view(), name="category-retrieve"),
     path("<uuid:pk>/update/", CategoryUpdateAPIView.as_view(), name="category-update"),
-    path("<uuid:pk>/delete/", CategoryDestroyAPIView.as_view(), name="category-destroy"),
-
+    path(
+        "<uuid:pk>/delete/", CategoryDestroyAPIView.as_view(), name="category-destroy"
+    ),
 ]
 
 product_urls = [

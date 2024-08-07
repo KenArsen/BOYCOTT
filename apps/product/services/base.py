@@ -1,6 +1,6 @@
 import abc
 
-from apps.product.models import Product, Category
+from apps.product.models import Category, Product
 
 
 # Category
