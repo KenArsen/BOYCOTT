@@ -61,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 AUTH_USER_MODEL = "user.User"
@@ -233,11 +234,9 @@ SESSION_COOKIE_NAME = "s"
 CSRF_COOKIE_SECURE = env.bool("BOYCOTT_CSRF_COOKIE_SECURE", default=True)
 CSRF_COOKIE_NAME = "c"
 X_FRAME_OPTIONS = env.str("BOYCOTT_X_FRAME_OPTIONS", default="SAMEORIGIN")
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_PRELOAD = True
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = env.list("BOYCOTT_CORS_ALLOWED_ORIGINS", default=[])
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = env.list("BOYCOTT_CORS_ALLOWED_ORIGINS", default=[])
 CSRF_TRUSTED_ORIGINS = env.list("BOYCOTT_CSRF_TRUSTED_ORIGINS", default=[])
 
 SITE_ID = env.int("BOYCOTT_SITE_ID", default=1)
