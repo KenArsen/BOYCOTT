@@ -20,7 +20,13 @@ class ListProductSerializer(serializers.ModelSerializer):
             "status",
             "category",
             "description",
+            "description_en",
+            "description_ru",
+            "description_kg",
             "url",
+            "url_en",
+            "url_ru",
+            "url_kg",
         )
         ref_name = "ListProduct"
 
@@ -37,7 +43,13 @@ class RetrieveProductSerializer(serializers.ModelSerializer):
             "status",
             "category",
             "description",
+            "description_en",
+            "description_ru",
+            "description_kg",
             "url",
+            "url_en",
+            "url_ru",
+            "url_kg",
             "alternatives",
         )
         ref_name = "RetrieveProduct"
@@ -73,7 +85,13 @@ class UpdateProductSerializer(serializers.ModelSerializer):
             "status",
             "category",
             "description",
+            "description_en",
+            "description_ru",
+            "description_kg",
             "url",
+            "url_en",
+            "url_ru",
+            "url_kg",
         )
         ref_name = "UpdateProduct"
 
