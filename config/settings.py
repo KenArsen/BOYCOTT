@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from corsheaders.defaults import default_headers
 
 from django.conf.locale import LANG_INFO
 from django.utils.translation import gettext_lazy as _
@@ -221,31 +222,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOCALE_PATHS = [BASE_DIR / "locale/"]
 
 # Security settings
-CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:8000',
-#     'http://localhost:3000',
-#     'http://localhost:5174',
-#     'http://159.223.230.188:8000',
-#     'https://boykot-ten.vercel.app',
-# ]
-CORS_ALLOW_METHODS = (
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
-)
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8000',
-    'http://localhost:8082',
-    'http://localhost:3000',
-    'http://localhost:5174',
-    'http://159.223.230.188:8000',
-    'https://boykot-ten.vercel.app',
-    'https://*.127.0.0.1',
-]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = list(default_headers) + ['X-Amz-Date', ]
+CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 
 SITE_ID = env.int("BOYCOTT_SITE_ID", default=1)
 
