@@ -229,6 +229,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     'http://159.223.230.188:8000',
 #     'https://boykot-ten.vercel.app',
 # ]
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://localhost:8082',
