@@ -55,8 +55,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -221,16 +221,17 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOCALE_PATHS = [BASE_DIR / "locale/"]
 
 # Security settings
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-    'http://localhost:3000',
-    'http://localhost:5174',
-    'http://159.223.230.188:8000',
-    'https://boykot-ten.vercel.app',
-]
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:8000',
+#     'http://localhost:3000',
+#     'http://localhost:5174',
+#     'http://159.223.230.188:8000',
+#     'https://boykot-ten.vercel.app',
+# ]
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
+    'http://localhost:8082',
     'http://localhost:3000',
     'http://localhost:5174',
     'http://159.223.230.188:8000',
