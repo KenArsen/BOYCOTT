@@ -223,7 +223,7 @@ LOCALE_PATHS = [BASE_DIR / "locale/"]
 
 # Security settings
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_HEADERS = list(default_headers) + ['X-Amz-Date', ]
+CORS_ALLOW_HEADERS = list(default_headers)
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 
 SITE_ID = env.int("BOYCOTT_SITE_ID", default=1)
