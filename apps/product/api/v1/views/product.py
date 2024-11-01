@@ -28,6 +28,8 @@ from ..serializers.product import (
     UpdateProductSerializer,
 )
 
+from apps.product.models.product import Product
+
 
 @extend_schema(tags=["Products"], summary="List product")
 class ProductListAPIView(ListAPIView):
@@ -96,3 +98,11 @@ class ProductCountAPIView(APIView):
     def get(self, request):
         count = ProductRepository().count()
         return Response({"count": count}, status=HTTP_200_OK)
+
+
+class DeactivateProductAPIView(APIView):
+    queryset = ProductRepository().none()
+    serializer_class = CountProductSerializer
+
+    def post(self, request, *args, **kwargs):
+        Product.objects.all().update(is_activate=False)

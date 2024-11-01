@@ -38,7 +38,7 @@ class ProductAdmin(TranslationAdmin):
     fieldsets = (
         (
             _("Product"),
-            {"fields": ("category", "brand", "logo", "status", "description", "url")},
+            {"fields": ("category", "brand", "logo", "status", "description", "url", 'is_active')},
         ),
         (_("Alternatives"), {"fields": ("alternatives",)}),
         (_("Timestamps"), {"fields": ("created_at", "updated_at")}),
