@@ -14,7 +14,6 @@ from .views.product import (
     ProductListAPIView,
     ProductRetrieveAPIView,
     ProductUpdateAPIView,
-    DeactivateProductAPIView,
 )
 
 app_name = "product"
@@ -31,7 +30,6 @@ category_urls = [
 
 product_urls = [
     path("", ProductListAPIView.as_view(), name="list-product"),
-    path("deactivate/", DeactivateProductAPIView.as_view(), name="deactivate-product"),
     path("count/", ProductCountAPIView.as_view(), name="count-product"),
     path("create/", ProductCreateAPIView.as_view(), name="create-product"),
     path("<uuid:pk>/", ProductRetrieveAPIView.as_view(), name="retrieve-product"),

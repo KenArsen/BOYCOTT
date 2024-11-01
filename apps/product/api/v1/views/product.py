@@ -98,12 +98,3 @@ class ProductCountAPIView(APIView):
     def get(self, request):
         count = ProductRepository().count()
         return Response({"count": count}, status=HTTP_200_OK)
-
-
-class DeactivateProductAPIView(APIView):
-    queryset = ProductRepository().none()
-    serializer_class = CountProductSerializer
-
-    def get(self, request, *args, **kwargs):
-        Product.objects.all().update(is_active=False)
-        return Response(status=HTTP_200_OK)
