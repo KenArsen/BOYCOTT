@@ -105,5 +105,5 @@ class DeactivateProductAPIView(APIView):
     serializer_class = CountProductSerializer
 
     def get(self, request, *args, **kwargs):
-        Product.objects.all().update(is_activate=False)
+        Product.objects.all().update(is_active=False)
         return Response(status=HTTP_200_OK)
