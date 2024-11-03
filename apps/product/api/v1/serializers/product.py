@@ -17,6 +17,7 @@ class ListProductSerializer(serializers.ModelSerializer):
             "uuid",
             "brand",
             "logo",
+            "rating",
             "status",
             "category",
             "description",
@@ -40,6 +41,7 @@ class RetrieveProductSerializer(serializers.ModelSerializer):
             "uuid",
             "brand",
             "logo",
+            "rating",
             "status",
             "category",
             "description",
@@ -65,6 +67,7 @@ class CreateProductSerializer(serializers.ModelSerializer):
         fields = (
             "brand",
             "logo",
+            "rating",
             "status",
             "category",
             "description",
@@ -82,6 +85,7 @@ class UpdateProductSerializer(serializers.ModelSerializer):
         fields = (
             "brand",
             "logo",
+            "rating",
             "status",
             "category",
             "description",

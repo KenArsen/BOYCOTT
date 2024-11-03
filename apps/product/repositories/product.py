@@ -18,7 +18,8 @@ class ProductRepository(IProductRepository):
 
     def list(self) -> list[Product]:
         # Здесь используется select_related для получения связанных категорий и prefetch_related для альтернатив.
-        return Product.objects.select_related("category").prefetch_related("alternatives").order_by("-updated_at")
+        return Product.objects.select_related("category").prefetch_related("alternatives").order_by("-rating",
+                                                                                                    "-updated_at")
 
     def retrieve(self, product_id: int) -> Product:
         try:

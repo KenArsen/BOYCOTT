@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as gettext_lazy
 
 from apps.common.models import CoreModel
@@ -41,6 +42,12 @@ class Product(CoreModel):
         help_text=gettext_lazy(
             "Designates whether this product is in boycott (True) or normal (False)."
         ),
+    )
+    rating = models.PositiveSmallIntegerField(
+        verbose_name=gettext_lazy("rating"),
+        default=2,
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+        help_text=gettext_lazy("Product rating from 1 to 5."),
     )
     description = models.TextField(
         verbose_name=gettext_lazy("description"),

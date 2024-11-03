@@ -3,6 +3,17 @@ from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TranslationAdmin
 
 from .models import Category, Product
+from django import forms
+
+
+class ProductAdminForm(forms.ModelForm):
+    RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
+
+    rating = forms.ChoiceField(choices=RATING_CHOICES, label=_("Rating"))
+
+    class Meta:
+        model = Product
+        fields = "__all__"
 
 
 @admin.register(Category)
@@ -29,6 +40,7 @@ class CategoryAdmin(TranslationAdmin):
 
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
+    form = ProductAdminForm
     list_display = ("brand", "status", "category", "created_at", "updated_at")
     list_filter = ("status", "category", "created_at", "updated_at")
     search_fields = ("brand", "category__name", "description")
@@ -38,7 +50,7 @@ class ProductAdmin(TranslationAdmin):
     fieldsets = (
         (
             _("Product"),
-            {"fields": ("category", "brand", "logo", "status", "description", "url", 'is_active')},
+            {"fields": ("category", "brand", "logo", "status", "description", "url", 'rating')},
         ),
         (_("Alternatives"), {"fields": ("alternatives",)}),
         (_("Timestamps"), {"fields": ("created_at", "updated_at")}),
